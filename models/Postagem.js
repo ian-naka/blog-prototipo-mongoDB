@@ -1,5 +1,5 @@
 
-const conn = require('..db/conn')
+const conn = require('../db/conn')
 
 class Postagem{
 
@@ -10,7 +10,7 @@ class Postagem{
         this.descricao = descricao
     }
     save(){
-        const postagem = db.conn().collection('Postagem').insertOne({
+        const postagem = conn.db().collection('Postagem').insertOne({
             titulo: this.titulo,
             tema: this.tema,
             autor: this.autor,

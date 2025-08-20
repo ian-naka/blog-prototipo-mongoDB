@@ -6,7 +6,7 @@ async function run(){
     try {
         await client.connect()
         console.log('Conectamos ao MongoDB')
-    } catch (error) {
+    } catch (err) {
         console.log(`Deu erro na conexão ao banco, no arquivo conn.js: ${err}`)
     }
 }

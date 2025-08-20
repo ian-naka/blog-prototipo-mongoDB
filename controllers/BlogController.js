@@ -1,4 +1,4 @@
-const Postagem = require('../models/Blog') // importacao do model Blog
+const Postagem = require('../models/Postagem') // importacao do model Postagem
 
 module.exports = class BlogController{ //exportacao da classe
     static async renderizaBlog(req,res){  //funcao para renderizar a página inicial | estatico nao precisa de um objeto da classe para ser chamada
@@ -11,10 +11,10 @@ module.exports = class BlogController{ //exportacao da classe
         res.render('blogs/formulario')
     }
     static async formularioPOST(req,res){
-        titulo = req.body.titulo
-        tema = req.body.tema
-        autor = req.body.autor
-        descricao = req.body.descricao
+        const titulo = req.body.titulo
+        const tema = req.body.tema
+        const autor = req.body.autor
+        const descricao = req.body.descricao
 
         const postagem = new Postagem(titulo, tema, autor, descricao)
         postagem.save()
