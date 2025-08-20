@@ -16,4 +16,4 @@ app.use(express.json()) // middleware que instrui o servidor a ler e processar r
 
 app.use('/blog', blogRoutes)
 
-app.listen(3100)
+app.listen(3000)

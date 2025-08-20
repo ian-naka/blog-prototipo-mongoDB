@@ -1,4 +1,4 @@
-const { MongoClient } = require ('mongodb')
+const { MongoClient } = require('mongodb')
 const uri = 'mongodb://localhost:27017/blog'
 const client = new MongoClient(uri)
 
