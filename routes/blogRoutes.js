@@ -8,4 +8,5 @@ router.get('/', BlogController.renderizaBlog)
 router.get('/postagens', BlogController.renderizaPostagens)
 router.get('/criarconteudo', BlogController.formulario)
 router.post('/criarconteudo', BlogController.formularioPOST)
+router.get('/:id', BlogController.getPostagens)
 module.exports = router

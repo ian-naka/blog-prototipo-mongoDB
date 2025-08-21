@@ -6,7 +6,7 @@
     {{#each postagens}} 
     <!-- O loop agora cria apenas os itens individuais -->
     <div class="postagem">
-        <h2>{{this.titulo}}</h2>
+        <h2><a href="/blog/{{this._id}}">{{this.titulo}}</a></h2>
         <h5>por: {{this.autor}}</h5>
     </div>
     {{/each}}

@@ -21,4 +21,9 @@ module.exports = class BlogController{ //exportacao da classe
         postagem.save()
         res.redirect('/blog/postagens')
     }
+    static async getPostagens(req, res){
+        const id = req.params.id
+        const postagem = await Postagem.getPostagensId(id)
+        res.render('blogs/postagem', { postagem })
+    }
 }

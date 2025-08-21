@@ -84,3 +84,13 @@
 .postagem h5 {
   margin-bottom: 1em;
 }
+.postagem-individual h1{
+    margin-bottom: 0.5em;
+}
+.postagem-individual h4{
+    margin-top: 1em;
+}
+.postagem-individual a {
+    margin-top: 1em;
+    display: inline-block;
+}

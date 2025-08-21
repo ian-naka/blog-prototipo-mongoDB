@@ -1,4 +1,5 @@
 
+const { ObjectId } = require('mongodb')
 const conn = require('../db/conn')
 
 class Postagem{
@@ -22,6 +23,10 @@ class Postagem{
         const postagens = conn.db().collection('Postagem').find().toArray()
         return postagens
     } // cria o metodo static para resgatar as postagens
+    static async getPostagensId(id){
+        const product = await conn.db().collection('Postagem').findOne({ _id: new ObjectId(id)})
+        return product
+    }
 }
 
 module.exports = Postagem
