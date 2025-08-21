@@ -1,0 +1,14 @@
+<h1>Confira nossas postagens</h1>
+
+<!-- O container .postagens fica aqui fora -->
+<div class="postagens">
+
+    {{#each postagens}} 
+    <!-- O loop agora cria apenas os itens individuais -->
+    <div class="postagem">
+        <h2>{{this.titulo}}</h2>
+        <h5>por: {{this.autor}}</h5>
+    </div>
+    {{/each}}
+
+</div>

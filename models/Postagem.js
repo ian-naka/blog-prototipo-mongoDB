@@ -18,6 +18,10 @@ class Postagem{
         })
         return postagem
     } //metodo para salvar dados
+    static getPostagens(){
+        const postagens = conn.db().collection('Postagem').find().toArray()
+        return postagens
+    } // cria o metodo static para resgatar as postagens
 }
 
 module.exports = Postagem

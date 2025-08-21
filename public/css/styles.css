@@ -67,3 +67,20 @@
   cursor: pointer;
   
 }
+.postagens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+.postagem {
+  width: 23%;
+  margin: 1%;
+  text-align: center;
+}
+
+.postagem h2 {
+  margin-bottom: 0.5em;
+}
+.postagem h5 {
+  margin-bottom: 1em;
+}
