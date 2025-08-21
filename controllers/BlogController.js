@@ -26,4 +26,10 @@ module.exports = class BlogController{ //exportacao da classe
         const postagem = await Postagem.getPostagensId(id)
         res.render('blogs/postagem', { postagem })
     }
+
+    static async removePostagem(req, res){
+        const id = req.params.id
+        const postagem = await Postagem.removePostagemId(id)
+        res.redirect('/blog/postagens')
+    }
 }

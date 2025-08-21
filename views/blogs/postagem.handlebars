@@ -3,5 +3,8 @@
     <h5>Tema: {{postagem.tema}}</h5>
     <h5>Por {{postagem.autor}}</h5>
     <h4>{{postagem.descricao}}</h4>
+    <form action="/blog/remove/{{postagem._id}}" method="post">
+    <input type="submit" value="Excluir" class="btn">
+    </form>
     <a href="/blog/postagens">Voltar</a>
 </div>
