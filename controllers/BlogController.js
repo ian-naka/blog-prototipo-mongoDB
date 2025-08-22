@@ -18,7 +18,7 @@ module.exports = class BlogController{ //exportacao da classe
         const descricao = req.body.descricao
 
         const postagem = new Postagem(titulo, tema, autor, descricao)
-        postagem.save()
+        await postagem.save()
         res.redirect('/blog/postagens')
     }
     static async getPostagens(req, res){
