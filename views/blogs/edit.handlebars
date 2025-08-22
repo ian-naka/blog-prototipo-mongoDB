@@ -1,4 +1,5 @@
 <form action="/blog/editarconteudo" method="post">
+<input type="hidden" name="id" value="{{postagem._id}}">
 <div class="formulario">
     <label for="autor">Nome do autor:</label>
     <input type="text" name="autor" placeholder="Digite o seu nome..." value="{{postagem.autor}}">
@@ -15,6 +16,6 @@
     <label for="descricao">Descrição da Postagem:</label>
     <textarea name="descricao" placeholder="Discorra..." >{{postagem.descricao}}</textarea>
 </div>
-<input type="submit" class="btn">
+<input type="submit" value="Editar" class="btn">
 
 </form>

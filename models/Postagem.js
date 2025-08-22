@@ -33,7 +33,10 @@ class Postagem{
         const postagem = await conn.db().collection('Postagem').deleteOne({ _id: new ObjectId(id)})
         return postagem
     }
-    
+    async atualizarPostagem(id){
+        await conn.db().collection('Postagem').updateOne({ _id: new ObjectId(id)}, {$set: this})
+        return 
+    }
 }
 
 module.exports = Postagem

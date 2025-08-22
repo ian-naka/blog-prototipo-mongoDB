@@ -38,4 +38,15 @@ module.exports = class BlogController{ //exportacao da classe
         const postagem = await Postagem.getPostagensId(id)
         res.render('blogs/edit', { postagem })
     }
+    static async editarPostagemPOST(req, res){
+        const id = req.body.id
+        const autor = req.body.autor
+        const tema = req.body.tema
+        const titulo = req.body.titulo
+        const descricao = req.body.descricao
+
+        const postagem = new Postagem(titulo, tema, autor, descricao)
+        await postagem.atualizarPostagem(id)
+        res.redirect('/blog/postagens')
+    }
 }
