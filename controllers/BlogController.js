@@ -32,4 +32,10 @@ module.exports = class BlogController{ //exportacao da classe
         await Postagem.removePostagemId(id)
         res.redirect('/blog/postagens')
     }
+    
+    static async editarPostagem(req, res){
+        const id = req.params.id 
+        const postagem = await Postagem.getPostagensId(id)
+        res.render('blogs/edit', { postagem })
+    }
 }
