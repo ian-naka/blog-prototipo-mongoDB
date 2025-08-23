@@ -1,96 +1,299 @@
-*{
-    font-family: arial;
-    margin: 0;
-    padding: 0;
-    color: #171717;
-    background-color: rgb(255, 255, 255);
+/* ============================================= */
+/* Boas Práticas e Variáveis Globais (Nova Paleta) */
+/* ============================================= */
+:root {
+  --cor-primaria: #3a5a9c;      /* Um azul mais suave e elegante */
+  --cor-primaria-clara: #eaf1ff; /* Um azul bem claro para hover */
+  --cor-destaque: #ffc107;      /* Amarelo-ouro para destaque */
+  --cor-texto: #333333;         /* Texto um pouco mais suave que o preto puro */
+  --cor-fundo: #f8f9fa;         /* Fundo branco-gelo, mais moderno */
+  --cor-branco: #ffffff;
+  --sombra-card: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra um pouco mais sutil */
 }
 
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  word-break: break-word;
+}
+
+/* Base tipográfica */
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.6rem; /* ~16px */
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* ============================================= */
+/* Layout Principal                            */
+/* ============================================= */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ============================================= */
+/* Navbar                                        */
+/* ============================================= */
 #navbar {
-    padding: 1.2em 1.4em;
-    margin-bottom: 1em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 4px solid rgb(255, 255, 255);
-    background-color: #0a4592;
+  background-color: var(--cor-branco);
+  padding: 1.5em 3em;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 2em;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
+
 #navbar ul {
-    display: flex;
-    list-style: none;
-    background-color: #0a4592;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 1em;
 }
-#navbar ul li {
-    margin-left: 1em;
-    background-color: #0a4592;
-}
+
 #navbar ul li a {
-    text-decoration: none;
-    transition: 0.5s;
-    font-weight: bold;
-    background-color: #0a4592;
-    color: #fff;
-}
-.home h1{
-    color:#0a4592
+  font-weight: 500;
+  color: var(--cor-primaria);
+  padding: 0.8em 1.5em;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.formulario{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1em;
-    max-width: 400px;
+#navbar ul li a:hover {
+  color: var(--cor-primaria);
+  background-color: var(--cor-primaria-clara);
 }
 
-.formulario input {
-    padding: 7px;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-    max-width: 200px;
-    
+
+/* ============================================= */
+/* Títulos (Com a barra de destaque)             */
+/* ============================================= */
+h1 {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 1.5em;
+  color: var(--cor-primaria);
 }
+
+h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--cor-destaque);
+  margin: 0.4em auto 0;
+  border-radius: 2px;
+}
+
+/* ============================================= */
+/* Formulário                                    */
+/* ============================================= */
+form {
+  max-width: 60rem;
+  margin: 2em auto;
+  padding: 3em;
+  background: var(--cor-branco);
+  border-radius: 8px;
+  box-shadow: var(--sombra-card);
+  border: 1px solid #e0e0e0;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5em;
+}
+
+.formulario label {
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  color: #555;
+}
+
+.formulario input[type="text"],
 .formulario textarea {
-    padding: 7px;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-    max-width: 400px;
-    height: 150px;
+  padding: 1em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  width: 100%;
+  background-color: #fdfdfd;
 }
-.formulario input[type='submit'],
+
+.formulario input[type="text"]:focus,
+.formulario textarea:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 5px rgba(58, 90, 156, 0.3);
+}
+
+.formulario textarea {
+  height: 15rem;
+  resize: vertical;
+}
+
+/* ============================================= */
+/* Botões                                        */
+/* ============================================= */
 .btn {
   margin-top: 1em;
-  background-color: #0a4592;
-  color: #fff;
-  padding: 0.5em 1.0em;
+  background-color: var(--cor-primaria);
+  color: var(--cor-branco);
+  padding: 0.8em 1.5em;
   font-weight: bold;
-  
   cursor: pointer;
-  
-}
-.postagens {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-}
-.postagem {
-  width: 23%;
-  margin: 1%;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  transition: background-color 0.3s, transform 0.2s;
+  display: inline-block;
   text-align: center;
 }
 
-.postagem h2 {
-  margin-bottom: 0.5em;
+.btn:hover {
+  background-color: #2e4a86;
+  transform: translateY(-2px);
 }
+
+/* ============================================= */
+/* Grid de Postagens                             */
+/* ============================================= */
+.postagens {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2em;
+}
+
+.postagem {
+  background: var(--cor-branco);
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: var(--sombra-card);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid #e0e0e0;
+}
+
+.postagem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.postagem h2 a {
+  color: var(--cor-primaria);
+  font-size: 2rem;
+}
+
 .postagem h5 {
+  color: #666;
+  margin-top: 1em;
+  font-size: 1.4rem;
+}
+
+.postagem h5 a {
+  color: #c00;
+  font-weight: bold;
+}
+
+/* ============================================= */
+/* Postagem Individual                           */
+/* ============================================= */
+.postagem-individual {
+  max-width: 800px;
+  margin: 2em auto;
+  padding: 3em;
+  background: var(--cor-branco);
+  border-radius: 8px;
+  box-shadow: var(--sombra-card);
+  border: 1px solid #e0e0e0;
+}
+
+.postagem-individual h1 {
+  margin-bottom: 0.5em;
+  text-align: left;
+}
+/* Reintrodução da barra, alinhada à esquerda */
+.postagem-individual h1::after{
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--cor-destaque);
+  margin: 0.4em 0 0;
+  border-radius: 2px;
+}
+
+.postagem-individual h5 {
+  color: #555;
   margin-bottom: 1em;
 }
-.postagem-individual h1{
-    margin-bottom: 0.5em;
+
+.postagem-individual h4 {
+  margin-top: 2em;
+  line-height: 1.7;
 }
-.postagem-individual h4{
-    margin-top: 1em;
+
+.postagem-individual form {
+  max-width: none;
+  margin: 2em 0 0;
+  padding: 0;
+  box-shadow: none;
+  border: none;
+  background: none;
 }
-.postagem-individual a {
-    margin-top: 1em;
-    display: inline-block;
+
+/* ============================================= */
+/* Responsividade                                */
+/* ============================================= */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+  
+  #navbar {
+    padding: 1em;
+  }
+  
+  #navbar ul {
+    gap: 0.5em;
+  }
+
+  #navbar ul li a {
+    padding: 0.8em 1em;
+  }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    form {
+      padding: 2em;
+    }
+
+    #navbar ul {
+      justify-content: space-around;
+      gap: 0;
+    }
 }
