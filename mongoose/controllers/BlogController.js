@@ -22,7 +22,7 @@ module.exports = class BlogController{ //exportacao da classe
     }
     static async getPostagens(req, res){
         const id = req.params.id
-        const postagem = await Postagem.getPostagensId(id)
+        const postagem = Postagem.findById(id).lean()
         res.render('blogs/postagem', { postagem })
     }
 
@@ -33,8 +33,8 @@ module.exports = class BlogController{ //exportacao da classe
     }
     
     static async editarPostagem(req, res){
-        const id = req.params.id 
-        const postagem = await Postagem.getPostagensId(id)
+        const id = req.params.id
+        const postagem = Postagem.findById(id).lean()
         res.render('blogs/edit', { postagem })
     }
     static async editarPostagemPOST(req, res){
