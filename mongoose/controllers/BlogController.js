@@ -5,8 +5,8 @@ module.exports = class BlogController{ //exportacao da classe
         res.render('blogs/home') 
     }
     static async renderizaPostagens(req,res){
-        const postagens = await Postagem.getPostagens() // torna o metodo assincrono e traz as postagens
-        res.render('blogs/postagens', { postagens}) // passa o objeto postagens
+        const postagens = Postagem.find().lean() // passa o objeto postagens
+        res.render('blogs/postagens', { postagens })
     }
     static async formulario(req,res){
         res.render('blogs/formulario')
