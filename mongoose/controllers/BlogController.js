@@ -39,13 +39,12 @@ module.exports = class BlogController{ //exportacao da classe
     }
     static async editarPostagemPOST(req, res){
         const id = req.body.id
-        const autor = req.body.autor
-        const tema = req.body.tema
         const titulo = req.body.titulo
         const descricao = req.body.descricao
-
-        const postagem = new Postagem(titulo, tema, autor, descricao)
-        await postagem.atualizarPostagem(id)
+        const autor = req.body.autor
+        const tema = req.body.tema
+        const postagem = {titulo, autor, descricao, tema}
+        await Postagem.updateOne({_id: id}, postagem)
         res.redirect('/blog/postagens')
     }
 }
