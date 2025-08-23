@@ -1,0 +1,21 @@
+<form action="/blog/editarconteudo" method="post">
+<input type="hidden" name="id" value="{{postagem._id}}">
+<div class="formulario">
+    <label for="autor">Nome do autor:</label>
+    <input type="text" name="autor" placeholder="Digite o seu nome..." value="{{postagem.autor}}">
+</div>
+<div class="formulario">
+    <label for="tema">Tema da Postagem:</label>
+    <input type="text" name="tema" placeholder="Digite o tema da postagem..." value="{{postagem.tema}}">
+</div>
+<div class="formulario">
+    <label for="titulo">Título da Postagem:</label>
+    <input type="text" name="titulo" placeholder="Digite o título da postagem..." value="{{postagem.titulo}}">
+</div>
+<div class="formulario">
+    <label for="descricao">Descrição da Postagem:</label>
+    <textarea name="descricao" placeholder="Discorra..." >{{postagem.descricao}}</textarea>
+</div>
+<input type="submit" value="Editar" class="btn">
+
+</form>

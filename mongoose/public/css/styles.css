@@ -1,0 +1,96 @@
+*{
+    font-family: arial;
+    margin: 0;
+    padding: 0;
+    color: #171717;
+    background-color: rgb(255, 255, 255);
+}
+
+#navbar {
+    padding: 1.2em 1.4em;
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid rgb(255, 255, 255);
+    background-color: #0a4592;
+}
+#navbar ul {
+    display: flex;
+    list-style: none;
+    background-color: #0a4592;
+}
+#navbar ul li {
+    margin-left: 1em;
+    background-color: #0a4592;
+}
+#navbar ul li a {
+    text-decoration: none;
+    transition: 0.5s;
+    font-weight: bold;
+    background-color: #0a4592;
+    color: #fff;
+}
+.home h1{
+    color:#0a4592
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+    max-width: 400px;
+}
+
+.formulario input {
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    max-width: 200px;
+    
+}
+.formulario textarea {
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    max-width: 400px;
+    height: 150px;
+}
+.formulario input[type='submit'],
+.btn {
+  margin-top: 1em;
+  background-color: #0a4592;
+  color: #fff;
+  padding: 0.5em 1.0em;
+  font-weight: bold;
+  
+  cursor: pointer;
+  
+}
+.postagens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+.postagem {
+  width: 23%;
+  margin: 1%;
+  text-align: center;
+}
+
+.postagem h2 {
+  margin-bottom: 0.5em;
+}
+.postagem h5 {
+  margin-bottom: 1em;
+}
+.postagem-individual h1{
+    margin-bottom: 0.5em;
+}
+.postagem-individual h4{
+    margin-top: 1em;
+}
+.postagem-individual a {
+    margin-top: 1em;
+    display: inline-block;
+}

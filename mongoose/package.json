@@ -1,0 +1,28 @@
+{
+  "name": "blog-prototipo-mongodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./index.js localhost 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ian-naka/blog-prototipo-mongoDB.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ian-naka/blog-prototipo-mongoDB/issues"
+  },
+  "homepage": "https://github.com/ian-naka/blog-prototipo-mongoDB#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.3",
+    "mongodb": "^6.18.0",
+    "nodemon": "^3.1.10"
+  }
+}
