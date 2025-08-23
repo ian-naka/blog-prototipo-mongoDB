@@ -5,7 +5,7 @@ module.exports = class BlogController{ //exportacao da classe
         res.render('blogs/home') 
     }
     static async renderizaPostagens(req,res){
-        const postagens = Postagem.find().lean() // passa o objeto postagens
+        const postagens = await Postagem.find().lean() // passa o objeto postagens
         res.render('blogs/postagens', { postagens })
     }
     static async formulario(req,res){
@@ -22,7 +22,7 @@ module.exports = class BlogController{ //exportacao da classe
     }
     static async getPostagens(req, res){
         const id = req.params.id
-        const postagem = Postagem.findById(id).lean()
+        const postagem = await Postagem.findById(id).lean()
         res.render('blogs/postagem', { postagem })
     }
 
@@ -34,7 +34,7 @@ module.exports = class BlogController{ //exportacao da classe
     
     static async editarPostagem(req, res){
         const id = req.params.id
-        const postagem = Postagem.findById(id).lean()
+        const postagem = await Postagem.findById(id).lean()
         res.render('blogs/edit', { postagem })
     }
     static async editarPostagemPOST(req, res){
