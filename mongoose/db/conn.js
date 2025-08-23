@@ -1,15 +1,12 @@
-const { MongoClient } = require('mongodb')
-const uri = 'mongodb://localhost:27017/blog'
-const client = new MongoClient(uri)
+const mongoose = require('mongoose')
 
-async function run(){
-    try {
-        await client.connect()
-        console.log('Conectamos ao MongoDB')
-    } catch (err) {
-        console.log(`Deu erro na conexão ao banco, no arquivo conn.js: ${err}`)
-    }
+async function main(){
+    await mongoose.connect('mongodb://localhost:27017/blog')
+    console.log('Conectamos no mongodb por meio do mongoose!')
 }
-run()
 
-module.exports = client
+main().catch((err) => {
+    console.log(`Deu erro na conexão via mongoose: ${err}`)
+})
+
+module.exports = mongoose
