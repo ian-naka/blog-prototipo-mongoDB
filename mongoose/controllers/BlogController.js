@@ -13,11 +13,10 @@ module.exports = class BlogController{ //exportacao da classe
     }
     static async formularioPOST(req,res){
         const titulo = req.body.titulo
-        const tema = req.body.tema
         const autor = req.body.autor
         const descricao = req.body.descricao
-
-        const postagem = new Postagem(titulo, tema, autor, descricao)
+        const tema = req.body.tema
+        const postagem = new Postagem({titulo, autor, descricao, tema})
         await postagem.save()
         res.redirect('/blog/postagens')
     }
